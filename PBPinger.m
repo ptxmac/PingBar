@@ -51,29 +51,32 @@
     NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];        
     
         
-    if (termStatus != 0)
-        return INFINITY;
-    
-    __block NSTimeInterval dt = [[NSDate date] timeIntervalSinceDate:date];
-    
-    [string enumerateLinesUsingBlock:^(NSString *str, BOOL *stop) {
-        if ([str hasPrefix:@"round-trip"]) {
-            *stop = YES;
-            NSArray *comps = [str componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"/ "]];
-            [comps enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-                float d = [obj floatValue];
-                if (d != 0.0) {
-                    *stop = YES;
-                    dt = d/1000.0;
-                    //NSLog(@"Found: (%@) %f",obj,d);
-                }
-            }];
-        }
+    if (termStatus != 0) {
+        NSLog(@"infinity: %i",termStatus);
+        return -1.0;
+    } else {
         
-    }];
-    
-    
-    return dt;
+        __block NSTimeInterval dt = [[NSDate date] timeIntervalSinceDate:date];
+        
+        [string enumerateLinesUsingBlock:^(NSString *str, BOOL *stop) {
+            if ([str hasPrefix:@"round-trip"]) {
+                *stop = YES;
+                NSArray *comps = [str componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"/ "]];
+                [comps enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                    float d = [obj floatValue];
+                    if (d != 0.0) {
+                        *stop = YES;
+                        dt = d/1000.0;
+                        //NSLog(@"Found: (%@) %f",obj,d);
+                    }
+                }];
+            }
+            
+        }];
+        
+        
+        return dt;
+    }
 }
 
 + (PBPinger *)pingerWithHost:(NSString *)host {

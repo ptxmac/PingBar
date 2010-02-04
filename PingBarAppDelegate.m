@@ -22,7 +22,7 @@
                             @"localhost",@"pingHost",
                             [NSNumber numberWithInteger:10],@"maxPings",
                             [NSNumber numberWithBool:NO],@"doPing",
-                            [NSNumber numberWithInteger:2],@"timePrecision",
+                            [NSNumber numberWithInteger:0],@"timePrecision",
                             nil]];
     
     
@@ -54,6 +54,16 @@
     if (pingTimer) [pingTimer invalidate];
 }
 
+- (void)updateTime {
+    NSTimeInterval secs = [[NSDate date] timeIntervalSinceDate:lastReply];
+    
+    int p = [[NSUserDefaults standardUserDefaults] integerForKey:@"timePrecision"];
+    // Evil double format :D
+    NSString *str = [NSString stringWithFormat:@"%%.%df",p];
+    [barItem setTitle:[NSString stringWithFormat:str,secs]];                                                 
+    
+}
+
 - (IBAction)startPinging:(id)sender {
     BOOL doPing = [[NSUserDefaults standardUserDefaults] boolForKey:@"doPing"];
     if (!doPing)
@@ -62,20 +72,25 @@
     //if (pinger)  // end
     pinger = [PBPinger pingerWithHost:[[NSUserDefaults standardUserDefaults] stringForKey:@"pingHost"]];        
     
+    lastReply = [NSDate date];
+    
     // + (NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)seconds repeats:(BOOL)repeats usingBlock:(void (^)(NSTimer *timer))fireBlock;
     pingTimer = [NSTimer scheduledTimerWithTimeInterval:[[NSUserDefaults standardUserDefaults] floatForKey:@"pingDelay"]
                                                 repeats:YES
                                              usingBlock:^(NSTimer *timer) {
+                                                 // Set time
+                                                 [self updateTime];
+                                                                                                 
                                                  int maxPings = [[NSUserDefaults standardUserDefaults] integerForKey:@"maxPings"];
                                                  if ([pingQueue operationCount] < maxPings) {
                                                      [pingQueue addOperationWithBlock:^{
                                                          NSTimeInterval delay = [pinger pingOnce];
                                                          [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                                                             // Evil double format :D
-                                                             int p = [[NSUserDefaults standardUserDefaults] integerForKey:@"timePrecision"];
-                                                             NSString *str = [NSString stringWithFormat:@"%%.%df",p];
-                                                             
-                                                             [barItem setTitle:[NSString stringWithFormat:str,delay]];
+                                                             if (delay >= 0.0) {
+                                                                 NSLog(@"not inf: %f",delay);
+                                                                 lastReply = [NSDate date];                                                               
+                                                             }
+                                                             [self updateTime];
                                                          }];
                                                      }];
                                                  }

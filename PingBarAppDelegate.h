@@ -17,6 +17,7 @@
     NSTimer *pingTimer;
     PBPinger *pinger;
     NSOperationQueue *pingQueue;
+    NSDate *lastReply;
 }
 
 @property (assign) IBOutlet NSWindow *window;
@@ -25,5 +26,6 @@
 - (IBAction)showPreferences:(id)sender;
 - (IBAction)startPinging:(id)sender;
 - (IBAction)stopPinging:(id)sender;
+- (void)updateTime;
 
 @end
