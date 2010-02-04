@@ -7,12 +7,23 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "PBPinger.h"
 
 @interface PingBarAppDelegate : NSObject <NSApplicationDelegate> {
     NSWindow *window;
     NSStatusItem *barItem;
+    NSMenu *menu;
+    id defaultsObserver;
+    NSTimer *pingTimer;
+    PBPinger *pinger;
+    NSOperationQueue *pingQueue;
 }
 
 @property (assign) IBOutlet NSWindow *window;
+@property (assign) IBOutlet NSMenu *menu;
+
+- (IBAction)showPreferences:(id)sender;
+- (IBAction)startPinging:(id)sender;
+- (IBAction)stopPinging:(id)sender;
 
 @end
