@@ -74,12 +74,12 @@
     
     lastReply = [NSDate date];
     
+    [self updateTime];
     // + (NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)seconds repeats:(BOOL)repeats usingBlock:(void (^)(NSTimer *timer))fireBlock;
     pingTimer = [NSTimer scheduledTimerWithTimeInterval:[[NSUserDefaults standardUserDefaults] floatForKey:@"pingDelay"]
                                                 repeats:YES
                                              usingBlock:^(NSTimer *timer) {
                                                  // Set time
-                                                 [self updateTime];
                                                                                                  
                                                  int maxPings = [[NSUserDefaults standardUserDefaults] integerForKey:@"maxPings"];
                                                  if ([pingQueue operationCount] < maxPings) {
