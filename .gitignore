@@ -18,3 +18,6 @@ xcuserdata
 # osx noise
 .DS_Store
 profile
+
+# Release fiels
+Releases
