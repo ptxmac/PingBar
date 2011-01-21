@@ -10,7 +10,7 @@ build/
 *.pbxuser
 *.perspective
 *.perspectivev3
-
+xcuserdata
 
 # old skool
 #.svn
