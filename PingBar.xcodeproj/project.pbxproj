@@ -11,6 +11,7 @@
 		256AC3DA0F4B6AC300CF3369 /* PingBarAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* PingBarAppDelegate.m */; };
 		31935F3C111AF91E00929778 /* PSYBlockTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 31935F3B111AF91E00929778 /* PSYBlockTimer.m */; };
 		31935F57111AFAFF00929778 /* PBPinger.m in Sources */ = {isa = PBXBuildFile; fileRef = 31935F56111AFAFF00929778 /* PBPinger.m */; };
+		31972E821355E77F0009C620 /* Pingbar.icns in Resources */ = {isa = PBXBuildFile; fileRef = 31972E811355E77F0009C620 /* Pingbar.icns */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -31,6 +32,7 @@
 		31935F3B111AF91E00929778 /* PSYBlockTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSYBlockTimer.m; sourceTree = "<group>"; };
 		31935F55111AFAFF00929778 /* PBPinger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBPinger.h; sourceTree = "<group>"; };
 		31935F56111AFAFF00929778 /* PBPinger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBPinger.m; sourceTree = "<group>"; };
+		31972E811355E77F0009C620 /* Pingbar.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Pingbar.icns; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* PingBar-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "PingBar-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* PingBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PingBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -88,6 +90,7 @@
 		29B97314FDCFA39411CA2CEA /* PingBar */ = {
 			isa = PBXGroup;
 			children = (
+				31972E811355E77F0009C620 /* Pingbar.icns */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -183,6 +186,7 @@
 			files = (
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
+				31972E821355E77F0009C620 /* Pingbar.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
