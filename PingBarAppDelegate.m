@@ -51,7 +51,8 @@
 }
 
 - (IBAction)stopPinging:(id)sender {
-    if (pingTimer) [pingTimer invalidate];
+    if (pingTimer) 
+        [pingTimer invalidate];
 }
 
 - (void)updateTime {
@@ -87,8 +88,8 @@
                                                          NSTimeInterval delay = [pinger pingOnce];
                                                          [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                                                              if (delay >= 0.0) {
-                                                                 NSLog(@"not inf: %f",delay);
-                                                                 lastReply = [NSDate date];                                                               
+                                                                 //NSLog(@"not inf: %f",delay);
+                                                                 lastReply = [[NSDate date] dateByAddingTimeInterval:-delay];                                                               
                                                              }
                                                              [self updateTime];
                                                          }];
