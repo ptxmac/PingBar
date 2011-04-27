@@ -26,6 +26,7 @@
 - (IBAction)showPreferences:(id)sender;
 - (IBAction)startPinging:(id)sender;
 - (IBAction)stopPinging:(id)sender;
+- (IBAction)showAbout:(id)sender;
 - (void)updateTime;
 
 @end
