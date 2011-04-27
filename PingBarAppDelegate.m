@@ -94,7 +94,8 @@
                                                              [self updateTime];
                                                          }];
                                                      }];
-                                                 }
+                                                 } else
+                                                     [self updateTime];
                                              }];
 }
 
