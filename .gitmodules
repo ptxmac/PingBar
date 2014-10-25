@@ -1,0 +1,3 @@
+[submodule "liboping"]
+	path = liboping
+	url = git://git.verplant.org/liboping.git

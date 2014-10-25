@@ -10,9 +10,9 @@
 #import "PBPinger.h"
 
 @interface PingBarAppDelegate : NSObject <NSApplicationDelegate> {
-    NSWindow *window;
+    NSWindow *__strong window;
     NSStatusItem *barItem;
-    NSMenu *menu;
+    NSMenu *__strong menu;
     id defaultsObserver;
     NSTimer *pingTimer;
     PBPinger *pinger;
@@ -20,8 +20,8 @@
     NSDate *lastReply;
 }
 
-@property (assign) IBOutlet NSWindow *window;
-@property (assign) IBOutlet NSMenu *menu;
+@property (strong) IBOutlet NSWindow *window;
+@property (strong) IBOutlet NSMenu *menu;
 
 - (IBAction)showPreferences:(id)sender;
 - (IBAction)startPinging:(id)sender;

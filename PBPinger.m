@@ -43,7 +43,6 @@
     //NSLog(@"ping done: %@",host);
     
     int termStatus = [task terminationStatus];
-    [task release]; 
     
     NSFileHandle *hd = [pipe fileHandleForReading];
     
@@ -80,7 +79,7 @@
 }
 
 + (PBPinger *)pingerWithHost:(NSString *)host {
-    return [[[PBPinger alloc] initWithHost:host] autorelease];
+    return [[PBPinger alloc] initWithHost:host];
 }
 
 - (id)initWithHost:(NSString *)h {

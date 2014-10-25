@@ -15,7 +15,7 @@
     
 }
 
-@property (retain) NSString *host;
+@property (strong) NSString *host;
 
 + (PBPinger *)pingerWithHost:(NSString *)host;
 - (id)initWithHost:(NSString *)host;
