@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
 		256AC3DA0F4B6AC300CF3369 /* PingBarAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* PingBarAppDelegate.m */; };
+		31181ECB19FC314300FA72F8 /* PingBarModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 31181EC919FC314300FA72F8 /* PingBarModel.xcdatamodeld */; };
 		31935F3C111AF91E00929778 /* PSYBlockTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 31935F3B111AF91E00929778 /* PSYBlockTimer.m */; };
 		31935F57111AFAFF00929778 /* PBPinger.m in Sources */ = {isa = PBXBuildFile; fileRef = 31935F56111AFAFF00929778 /* PBPinger.m */; };
 		31972E821355E77F0009C620 /* Pingbar.icns in Resources */ = {isa = PBXBuildFile; fileRef = 31972E811355E77F0009C620 /* Pingbar.icns */; };
@@ -28,6 +29,7 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		31181ECA19FC314300FA72F8 /* PingBarModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PingBarModel.xcdatamodel; sourceTree = "<group>"; };
 		31935F3A111AF91E00929778 /* PSYBlockTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSYBlockTimer.h; sourceTree = "<group>"; };
 		31935F3B111AF91E00929778 /* PSYBlockTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSYBlockTimer.m; sourceTree = "<group>"; };
 		31935F55111AFAFF00929778 /* PBPinger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBPinger.h; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				8D1107310486CEB800E47090 /* PingBar-Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
+				31181EC919FC314300FA72F8 /* PingBarModel.xcdatamodeld */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				256AC3DA0F4B6AC300CF3369 /* PingBarAppDelegate.m in Sources */,
 				31935F3C111AF91E00929778 /* PSYBlockTimer.m in Sources */,
+				31181ECB19FC314300FA72F8 /* PingBarModel.xcdatamodeld in Sources */,
 				31935F57111AFAFF00929778 /* PBPinger.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,6 +311,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		31181EC919FC314300FA72F8 /* PingBarModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				31181ECA19FC314300FA72F8 /* PingBarModel.xcdatamodel */,
+			);
+			currentVersion = 31181ECA19FC314300FA72F8 /* PingBarModel.xcdatamodel */;
+			path = PingBarModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
 }

@@ -18,8 +18,8 @@
 @property (strong) NSString *host;
 
 + (PBPinger *)pingerWithHost:(NSString *)host;
-- (id)initWithHost:(NSString *)host;
-- (NSTimeInterval)pingOnce;
+- (instancetype)initWithHost:(NSString *)host NS_DESIGNATED_INITIALIZER;
+@property (nonatomic, readonly) NSTimeInterval pingOnce;
 
 @end
 

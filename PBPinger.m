@@ -27,12 +27,10 @@
     NSDate *date = [NSDate date];
     
     [task setLaunchPath:@"/sbin/ping"];
-    [task setArguments:[NSArray arrayWithObjects:
-                        @"-o",
+    [task setArguments:@[@"-o",
                         @"-c",@"1",
                         @"-q",
-                        host,
-                        nil]];
+                        host]];
     
     NSPipe *pipe = [NSPipe pipe];
         
@@ -82,7 +80,7 @@
     return [[PBPinger alloc] initWithHost:host];
 }
 
-- (id)initWithHost:(NSString *)h {
+- (instancetype)initWithHost:(NSString *)h {
     self = [super init];
     if (self != nil) {
         self.host = h;
