@@ -86,9 +86,17 @@ class PingBarAppDelegate: NSObject, NSApplicationDelegate {
         let bar = NSStatusBar.system
         let item = bar.statusItem(withLength: NSStatusItem.variableLength)
         item.button?.title = "Test"
+        
+        var prefName = "Preferences…"
+        if #available(macOS 13.0, *) {
+            prefName = "Settings…"
+        }
+            
+        
+        
 
         let menu = NSMenu {
-            MenuItem("Preferences...").onSelect {
+            MenuItem(prefName).onSelect {
                 if #available(macOS 13.0, *) {
                     NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
                 } else {
