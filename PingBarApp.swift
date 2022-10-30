@@ -13,13 +13,6 @@ struct PingBarApp: App {
     @NSApplicationDelegateAdaptor(PingBarAppDelegate.self) var delegate
 
     var body: some Scene {
-        WindowGroup {
-            ZStack {
-                EmptyView()
-            }
-            .hidden()
-
-        }
         Settings {
             SettingsView()
         }

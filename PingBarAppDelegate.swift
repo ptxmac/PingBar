@@ -67,22 +67,21 @@ class PingBarAppDelegate: NSObject, NSApplicationDelegate {
         })
     }
 
-    func applicationDidFinishLaunching(_ notification: Notification) {
+    func applicationDidFinishLaunching(_: Notification) {
         UserDefaults.standard.register(defaults: [
             "pingDelay": 1.0,
             "pingHost": "localhost",
             "doPing": false,
             "timePrecision": 0,
-            "maxPings": 10 // TODO: add to ui!
+            "maxPings": 10, // TODO: add to ui!
         ])
-        
+
         NotificationCenter.default.addObserver(forName: UserDefaults.didChangeNotification,
                                                object: UserDefaults.standard,
                                                queue: nil) { _ in
             self.stopPinging()
             self.startPinging()
         }
-        
 
         let bar = NSStatusBar.system
         let item = bar.statusItem(withLength: NSStatusItem.variableLength)
@@ -90,7 +89,11 @@ class PingBarAppDelegate: NSObject, NSApplicationDelegate {
 
         let menu = NSMenu {
             MenuItem("Preferences...").onSelect {
-                NSApp.sendAction(Selector(("showPreferencesWindow:")), to: nil, from: nil)
+                if #available(macOS 13.0, *) {
+                    NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
+                } else {
+                    NSApp.sendAction(Selector(("showPreferencesWindow:")), to: nil, from: nil)
+                }
                 NSApp.activate(ignoringOtherApps: true)
             }
             MenuItem("About").onSelect {
