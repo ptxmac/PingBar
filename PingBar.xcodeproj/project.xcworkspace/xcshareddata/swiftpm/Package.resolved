@@ -1,25 +1,14 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "MenuBuilder",
-        "repositoryURL": "https://github.com/j-f1/MenuBuilder",
-        "state": {
-          "branch": "main",
-          "revision": "7e2ba18eb49349e02383a93344a26017b372765d",
-          "version": null
-        }
-      },
-      {
-        "package": "SwiftyPing",
-        "repositoryURL": "https://github.com/samiyr/SwiftyPing",
-        "state": {
-          "branch": "master",
-          "revision": "05591bc0047e41e0e1d98135c6bc457192a72d39",
-          "version": null
-        }
+  "pins" : [
+    {
+      "identity" : "menubuilder",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/j-f1/MenuBuilder",
+      "state" : {
+        "branch" : "main",
+        "revision" : "bb7639df2369690228ee4650c0cc9f9e29cc4f1c"
       }
-    ]
-  },
-  "version": 1
+    }
+  ],
+  "version" : 2
 }

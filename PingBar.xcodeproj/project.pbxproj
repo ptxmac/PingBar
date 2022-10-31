@@ -27,6 +27,7 @@
 		311C4845274937DA0076D471 /* Pinger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pinger.swift; sourceTree = "<group>"; };
 		311C4847274948150076D471 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		311C4849274949F90076D471 /* PingBarAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PingBarAppDelegate.swift; sourceTree = "<group>"; };
+		3167F647290FCD8D0055F45D /* PRIVACY_POLICY.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = PRIVACY_POLICY.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +45,7 @@
 		311C4802274925570076D471 = {
 			isa = PBXGroup;
 			children = (
+				3167F647290FCD8D0055F45D /* PRIVACY_POLICY.md */,
 				311C484227492F630076D471 /* README.md */,
 				311C484C274952A80076D471 /* Resources */,
 				311C484B27494A010076D471 /* Classes */,
@@ -130,7 +132,6 @@
 			mainGroup = 311C4802274925570076D471;
 			packageReferences = (
 				311C483927492C240076D471 /* XCRemoteSwiftPackageReference "MenuBuilder" */,
-				311C483C27492C320076D471 /* XCRemoteSwiftPackageReference "SwiftyPing" */,
 			);
 			productRefGroup = 311C480C274925570076D471 /* Products */;
 			projectDirPath = "";
@@ -366,14 +367,6 @@
 			repositoryURL = "https://github.com/j-f1/MenuBuilder";
 			requirement = {
 				branch = main;
-				kind = branch;
-			};
-		};
-		311C483C27492C320076D471 /* XCRemoteSwiftPackageReference "SwiftyPing" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/samiyr/SwiftyPing";
-			requirement = {
-				branch = master;
 				kind = branch;
 			};
 		};
